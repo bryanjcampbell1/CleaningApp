@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import Icon from '@expo/vector-icons/Ionicons';
+
+import HomeScreen from './screens/HomeScreen';
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -30,22 +32,6 @@ class App extends Component {
 export default App;
 
 
-class FirstScreen extends React.Component {
-  static navigationOptions = {
-  header: null,
-  };
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'teal' }}>
-        <Text style={styles.text}>FirstScreen</Text>
-        <Button
-          title="Next"
-          onPress={() => this.props.navigation.navigate('Second')}
-        />
-      </View>
-    );
-  }
-}
 
 class SecondScreen extends React.Component {
   static navigationOptions = {
@@ -153,7 +139,7 @@ class WelcomeScreen extends Component {
 
 const StackNavigator1 = createStackNavigator(
   {
-    First: {screen: FirstScreen},
+    First: {screen: HomeScreen},
     Second: {screen: SecondScreen},
     Third: {screen: ThirdScreen}
   },
@@ -161,7 +147,19 @@ const StackNavigator1 = createStackNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: routeName
+        headerTitle: routeName,
+        headerStyle: {
+        backgroundColor: "rgba(134,219,234,1)",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        )
+        },
+
       };
     }
   }
@@ -173,7 +171,7 @@ const StackNavigator2 = createStackNavigator(
     Fifth: {screen: FifthScreen},
     Sixth: {screen: SixthScreen}
   },
-{
+{   
     defaultNavigationOptions: ({ navigation }) => {
       return {
         headerLeft: (
@@ -247,10 +245,97 @@ const AppSwitchNavigator = createSwitchNavigator({
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  root: {
+    backgroundColor: "white",
+    flex: 1,
+    flexDirection: "column"
+  },
+  rect: {
+    height: 83.17,
+    width: 375,
+    backgroundColor: "rgba(134,219,234,1)",
+    opacity: 1
+  },
+  body: {
+    backgroundColor: "rgba(246,244,244,1)",
+    alignSelf: "stretch",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-around",
+    opacity: 1
+  },
+  creditsBox: {
+    top: 74,
+    left: 0,
+    height: 99.12,
+    position: "absolute",
+    backgroundColor: "rgba(246,244,244,1)",
+    alignItems: "center",
+    justifyContent: "center",
+    right: 0,
+    opacity: 1
+  },
+  button4: {
+    width: 99,
+    height: 35
+  },
+  creditDisplayBox: {
+    width: 282,
+    height: 56,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    backgroundColor: "rgba(134,219,234,1)",
+    opacity: 1,
+    borderRadius: 25
+  },
+  credits: {
+    width: 115,
+    height: 24,
+    alignSelf: "center",
+    backgroundColor: "transparent",
+    fontSize: 18,
+    fontFamily: "ArialRoundedMTBold"
+  },
+  creditAmount: {
+    width: 46.58,
+    height: 18,
+    backgroundColor: "transparent",
+    fontSize: 18,
+    fontFamily: "ArialRoundedMTBold"
+  },
+  requestBox: {
+    top: 220,
+    left: 0,
+
+    height: 253,
+    position: "absolute",
+    alignItems: "center",
+    backgroundColor: "rgba(246,244,244,1)",
+    flexDirection: "column",
+    right: 0,
+    opacity: 1
+  },
+  requestText: {
+    width: 250,
+    height: 34,
+    backgroundColor: "transparent",
+    fontSize: 25,
+    fontFamily: "ArialRoundedMTBold",
+    textAlign: "center"
+  },
+  requestButtonBox: {
+    width: 200,
+    height: 200,
+    backgroundColor: "rgba(134,219,234,1)",
+    opacity: 1,
+    borderRadius: 40
   }
 });
