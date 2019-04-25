@@ -19,7 +19,7 @@ export default class HomeScreen extends React.Component {
             <Button
               style={styles.button4}
               title="Add Funds"
-              onPress={() => this.props.navigation.navigate('Fourth')}
+              onPress={() => this.props.navigation.navigate('Second')}
             />
           </View>
           <View style={styles.requestBox}>
@@ -28,7 +28,7 @@ export default class HomeScreen extends React.Component {
               <Button
                 style={styles.button4}
                 title="Add Funds"
-                onPress={() => this.props.navigation.navigate('Fourth')}
+                onPress={() => this.props.navigation.navigate('Second')}
               />
             </View>
           </View>
@@ -48,12 +48,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flex: 1,
     flexDirection: "column"
-  },
-  rect: {
-    height: 83.17,
-    width: 375,
-    backgroundColor: "rgba(134,219,234,1)",
-    opacity: 1
   },
   body: {
     backgroundColor: "rgba(246,244,244,1)",
