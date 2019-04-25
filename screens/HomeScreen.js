@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import Icon from '@expo/vector-icons/Ionicons';
-
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -19,7 +17,7 @@ export default class HomeScreen extends React.Component {
             <Button
               style={styles.button4}
               title="Add Funds"
-              onPress={() => this.props.navigation.navigate('Second')}
+              onPress={() => this.props.navigation.navigate('Jobs')}
             />
           </View>
           <View style={styles.requestBox}>
@@ -28,7 +26,7 @@ export default class HomeScreen extends React.Component {
               <Button
                 style={styles.button4}
                 title="Add Funds"
-                onPress={() => this.props.navigation.navigate('Second')}
+                onPress={() => this.props.navigation.navigate('Jobs')}
               />
             </View>
           </View>

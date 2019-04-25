@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button , TouchableHighlight } from 'react-nativ
 import Icon from '@expo/vector-icons/Ionicons';
 
 import HomeScreen from './screens/HomeScreen';
+import JobScreen from './screens/ChooseJobScreen';
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -30,74 +31,6 @@ class App extends Component {
   }
 }
 export default App;
-
-
-
-
-
-class SecondScreen extends Component {
-  static navigationOptions = {
-  header: null,
-  };
-  render() {
-    return (
-      <View style={styles.root}>
-        <View style={styles.body}>
-          <View style={styles.jobs}>
-            <View style={styles.homeBox} >
-              <TouchableHighlight
-               style={styles.button2}
-               onPress={() => this.props.navigation.navigate('Third')}
-              >
-               <Text style={styles.button2Text}> House / Apartment </Text>
-              </TouchableHighlight>
-            </View>
-            <View style={styles.carBox} >
-              <TouchableHighlight
-               style={styles.button2}
-               onPress={() => this.props.navigation.navigate('Third')}
-              >
-               <Text style={styles.button2Text}> Car </Text>
-              </TouchableHighlight>
-            </View>
-            <View style={styles.laundryBox} >
-              <TouchableHighlight
-               style={styles.button2}
-               onPress={() => this.props.navigation.navigate('Third')}
-              >
-               <Text style={styles.button2Text}> Laundry </Text>
-              </TouchableHighlight>
-            </View>
-            <View style={styles.dishesBox} >
-              <TouchableHighlight
-               style={styles.button2}
-               onPress={() => this.props.navigation.navigate('Third')}
-              >
-               <Text style={styles.button2Text}> Dishes </Text>
-              </TouchableHighlight>
-            </View>
-            <View style={styles.customBox} >
-              <TouchableHighlight
-               style={styles.button2}
-               onPress={() => this.props.navigation.navigate('Third')}
-              >
-               <Text style={styles.button2Text}> Custom </Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-        </View>
-      </View>
-    );
-  }
-}
-/*
-<TouchableHighlight 
-                  title="House / Apartment"
-                  style={styles.button2}
-                  onPress={() => this.props.navigation.navigate('Second')}
-                </TouchableHighlight> 
-
-*/
 
 class ThirdScreen extends React.Component {
   static navigationOptions = {
@@ -189,7 +122,7 @@ class WelcomeScreen extends Component {
 const StackNavigator1 = createStackNavigator(
   {
     Home: {screen: HomeScreen},
-    Second: {screen: SecondScreen},
+    Jobs: {screen: JobScreen},
     Third: {screen: ThirdScreen}
   },
   {
@@ -301,66 +234,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  root: {
-    backgroundColor: "white",
-    flex: 1
-  },
-  body: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignSelf: "stretch",
-    backgroundColor: "rgba(246,244,244,1)",
-    opacity: 1,
-    borderColor: "#000000",
-    borderWidth: 0,
-    padding: 20
-  },
-  jobs: {
-    flexDirection: "column",
-    backgroundColor: "rgb(230,230,230)",
-    alignSelf: "stretch",
-    flex: 1
-  },
-  carBox: {
-    flex: 0.2,
-    backgroundColor: "rgb(218, 218, 218)"
-  },
-  laundryBox: {
-    flex: 0.2,
-    backgroundColor: "rgb(230, 230, 230)"
-  },
-  dishesBox: {
-    flex: 0.2,
-    backgroundColor: "rgb(215, 215, 215)"
-  },
-  customBox: {
-    flex: 0.2,
-    backgroundColor: "rgb(211, 211, 211)"
-  },
-  homeBox: {
-    flex: 0.2,
-    backgroundColor: "rgb(211, 211, 211)"
-  },
-  JobsButton: {
-    flex: 1,
-    fontSize: 40,
-    fontFamily: "ArialRoundedMTBold",
-    textAlign: "center"
-  },
-  button2: {
-    flex: 1,
-    alignSelf: "stretch",
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: "rgb(211, 211, 211)",
-  },
-  button2Text: {
-    backgroundColor: "transparent",
-    fontSize: 25,
-    fontFamily: "ArialRoundedMTBold",
-    textAlign: "center"
-  },
-  
+  }
 });
