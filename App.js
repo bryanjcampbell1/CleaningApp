@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button , TouchableHighlight } from 'react-native';
+import { Container, Header, Content, Item, Input } from 'native-base';
 import Icon from '@expo/vector-icons/Ionicons';
 
 import HomeScreen from './screens/HomeScreen';
 import JobScreen from './screens/ChooseJobScreen';
+import DetailsScreen from './screens/Details';
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -32,22 +34,6 @@ class App extends Component {
 }
 export default App;
 
-class ThirdScreen extends React.Component {
-  static navigationOptions = {
-  header: null,
-  };
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor:'coral'  }}>
-        <Text>Third Screen</Text>
-        <Button
-          title="Next"
-          onPress={() => this.props.navigation.navigate('First')}
-        />
-      </View>
-    );
-  }
-}
 
 class FourthScreen extends React.Component {
   static navigationOptions = {
@@ -123,7 +109,7 @@ const StackNavigator1 = createStackNavigator(
   {
     Home: {screen: HomeScreen},
     Jobs: {screen: JobScreen},
-    Third: {screen: ThirdScreen}
+    Details: {screen: DetailsScreen}
   },
   {
     navigationOptions: ({ navigation }) => {
