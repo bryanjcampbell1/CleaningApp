@@ -6,6 +6,7 @@ import Icon from '@expo/vector-icons/Ionicons';
 import HomeScreen from './screens/HomeScreen';
 import JobScreen from './screens/ChooseJobScreen';
 import DetailsScreen from './screens/Details';
+import WhereWhenScreen from './screens/WhereWhenScreen';
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -109,7 +110,8 @@ const StackNavigator1 = createStackNavigator(
   {
     Home: {screen: HomeScreen},
     Jobs: {screen: JobScreen},
-    Details: {screen: DetailsScreen}
+    Details: {screen: DetailsScreen},
+    WhereWhen: {screen: WhereWhenScreen}
   },
   {
     navigationOptions: ({ navigation }) => {
