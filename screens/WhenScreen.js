@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button, TouchableHighlight } from 'react-native';
 import {Calendar} from 'react-native-calendars';
-import TimePicker from 'react-native-simple-time-picker';
 
 import SimplePicker from 'react-native-simple-picker';
 
@@ -22,7 +21,7 @@ class ExampleApp extends Component {
         <Text style={styles.paragraph}>Current Option: {this.state.selectedOption}</Text>
 
         <Text
-          style={{ color: '#006381', marginTop: 20 }}
+          style={{ color: '#006381', marginTop: 20, textAlign: 'center' }}
           onPress={() => {
             this.refs.picker.show();
           }}
@@ -46,7 +45,7 @@ class ExampleApp extends Component {
 }
 
 
-export default class WhereWhenScreen extends Component {
+export default class WhenScreen extends Component {
   static navigationOptions = {
   header: null,
   };
@@ -59,36 +58,18 @@ export default class WhereWhenScreen extends Component {
         <View style={styles.timePickerBox} >
           <ExampleApp />
         </View>
-        <View style={styles.nextButtonBox} />
+        <View style={styles.nextButtonBox} >
+          <TouchableHighlight
+           style={styles.button3}
+           onPress={() => this.props.navigation.navigate('Where')}
+          >
+           <Text style={styles.button3Text}> Next </Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
 }
-
-class MyTime extends Component {
-  state = {
-    selectedHours: 0,
-    selectedMinutes: 0,
-  }
- 
-  render() {
-    const { selectedHours, selectedMinutes } = this.state;
-    return (
-      <View style={styles.container}>
-        <Text>{selectedHours}:{selectedMinutes}</Text>
-        <TimePicker
-          selectedHours={selectedHours}
-          selectedMinutes={selectedMinutes}
-          onChange={(hours, minutes) => this.setState({ selectedHours: hours, selectedMinutes: minutes })}
-        />
-      </View>
-    );
-  }
-}
-
-
-
-
 
 
 class CalendarsScreen extends Component {
@@ -126,16 +107,14 @@ const styles = StyleSheet.create({
   },
   calendarBox: {
     flex: 0.5,
-    backgroundColor: "rgb(226, 226, 226)",
     alignSelf: "stretch"
   },
   timePickerBox: {
     flex: 0.35,
-    backgroundColor: "rgb(250, 250, 250)"
+    textAlign: 'center',
   },
   nextButtonBox: {
     flex: 0.15,
-    backgroundColor: "rgb(207, 207, 207)"
   },
   calendarObject: {
     backgroundColor: "rgba(165,2,2,1)",
@@ -174,5 +153,21 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontWeight: 'bold',
     fontSize: 18,
+  },
+  button3: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: "rgb(230,230,230)",
+    borderRadius: 20,
+    borderColor: "rgba(134,219,234,1)",
+    borderWidth: 5,
+    margin: 30
+  },
+  button3Text: {
+    backgroundColor: "transparent",
+    fontSize: 25,
+    fontFamily: "ArialRoundedMTBold",
+    textAlign: "center"
   },
 });

@@ -4,9 +4,10 @@ import { Container, Header, Content, Item, Input } from 'native-base';
 import Icon from '@expo/vector-icons/Ionicons';
 
 import HomeScreen from './screens/HomeScreen';
-import JobScreen from './screens/ChooseJobScreen';
+import JobScreen from './screens/JobScreen';
 import DetailsScreen from './screens/Details';
-import WhereWhenScreen from './screens/WhereWhenScreen';
+import WhenScreen from './screens/WhenScreen';
+import WhereScreen from './screens/WhereScreen';
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -15,7 +16,7 @@ import WhereWhenScreen from './screens/WhereWhenScreen';
  *    - AppDrawerNavigator
  *          - Dashboard - DashboardStackNavigator(needed for header and to change the header based on the                     tab)
  *            - DashboardTabNavigator
- *              - Tab 1 - FeedStack
+ *              - Tab 1 - FeedStac
  *              - Tab 2 - ProfileStack
  *              - Tab 3 - SettingsStack
  *            - Any files you don't want to be a part of the Tab Navigator can go here.
@@ -111,7 +112,8 @@ const StackNavigator1 = createStackNavigator(
     Home: {screen: HomeScreen},
     Jobs: {screen: JobScreen},
     Details: {screen: DetailsScreen},
-    WhereWhen: {screen: WhereWhenScreen}
+    When: {screen: WhenScreen},
+    Where: {screen: WhereScreen},
   },
   {
     navigationOptions: ({ navigation }) => {

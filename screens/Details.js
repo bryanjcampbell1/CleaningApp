@@ -26,7 +26,7 @@ export default class DetailsScreen extends Component {
               </Item>
               <TouchableHighlight
                style={styles.button3}
-               onPress={() => this.props.navigation.navigate('WhereWhen')}
+               onPress={() => this.props.navigation.navigate('When')}
               >
                <Text style={styles.button3Text}> Next </Text>
               </TouchableHighlight>
