@@ -8,6 +8,8 @@ import JobScreen from './screens/JobScreen';
 import DetailsScreen from './screens/Details';
 import WhenScreen from './screens/WhenScreen';
 import WhereScreen from './screens/WhereScreen';
+import PriceScreen from './screens/PriceScreen';
+import ProviderScreen from './screens/ProviderScreen';
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -114,6 +116,8 @@ const StackNavigator1 = createStackNavigator(
     Details: {screen: DetailsScreen},
     When: {screen: WhenScreen},
     Where: {screen: WhereScreen},
+    Price: {screen: PriceScreen},
+    Provider: {screen: ProviderScreen},
   },
   {
     navigationOptions: ({ navigation }) => {

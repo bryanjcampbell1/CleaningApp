@@ -131,7 +131,7 @@ handleClick = () => {
         <View style={styles.nextButtonBox} >
           <TouchableHighlight
            style={styles.button3}
-           onPress={() => this.props.navigation.navigate('Where')}
+           onPress={() => this.props.navigation.navigate('Price')}
           >
             <Text style={styles.button3Text}> Next </Text>
           </TouchableHighlight>
