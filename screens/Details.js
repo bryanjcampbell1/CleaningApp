@@ -11,19 +11,25 @@ export default class DetailsScreen extends Component {
       <View style={styles.root}>
         <View style={styles.body}>
           <View style={styles.detailsBox}>
+
             <View style={styles.customerBox}>
               <Text style={styles.customerLabel}>Customer Responsibility</Text>
               <Text style={styles.customerText}>Customer Text</Text>
             </View>
+
             <View style={styles.providerBox}>
               <Text style={styles.providerLabel}>Provider Responsibility</Text>
               <Text style={styles.providerText}>Text Added</Text>
             </View>
+
             <View style={styles.EstimatedHoursBox}>
               <Text style={styles.EstimatedHoursText}>Estimated Hours</Text>
               <Item rounded style={styles.InputHours}>
                 <Input placeholder='1'/>
               </Item>
+            </View>
+
+            <View style={styles.NextBox}>
               <TouchableHighlight
                style={styles.button3}
                onPress={() => this.props.navigation.navigate('When')}
@@ -31,6 +37,7 @@ export default class DetailsScreen extends Component {
                <Text style={styles.button3Text}> Next </Text>
               </TouchableHighlight>
             </View>
+
           </View>
         </View>
       </View>
@@ -61,7 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   customerBox: {
-    flex: 0.35,
+    flex: 0.325,
     backgroundColor: "rgb(209, 209, 209)",
     alignItems: "center",
     margin: 0,
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
     padding: 0
   },
   providerBox: {
-    flex: 0.35,
+    flex: 0.325,
     backgroundColor: "rgb(251, 251, 251)",
     alignItems: "center"
   },
@@ -98,7 +105,11 @@ const styles = StyleSheet.create({
     margin: 15
   },
   EstimatedHoursBox: {
-    flex: 0.3,
+    flex: 0.2,
+    backgroundColor: "transparent"
+  },
+  NextBox: {
+    flex: 0.15,
     backgroundColor: "transparent"
   },
   EstimatedHoursText: {
@@ -106,11 +117,12 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     fontSize: 18,
     fontFamily: "ArialRoundedMTBold",
-    margin: 15
+    margin: 10
   },
   InputHours: {
     marginLeft: 30,
-    marginRight:30
+    marginRight:30,
+
   },
   button3: {
     flex: 1,
@@ -120,7 +132,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: "rgba(134,219,234,1)",
     borderWidth: 5,
-    margin: 30
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 30,
+    marginRight:30
   },
   button3Text: {
     backgroundColor: "transparent",
