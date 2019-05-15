@@ -41,34 +41,6 @@ export default class HomeScreen extends React.Component {
         </View>
         <View style={styles.rect4}>
         </View>
-
-        
-          {/*<View style={styles.creditsBox}>
-            <View style={styles.creditDisplayBox}>
-              <Text style={styles.credits}>Credits</Text>
-              <Text style={styles.creditAmount}>$85</Text>
-            </View>
-            <Button
-              style={styles.button4}
-              title="Add Funds"
-              onPress={() => this.props.navigation.navigate('Jobs')}
-            />
-            
-          </View>
-      
-          <View style={styles.requestBox}>
-            <Text style={styles.requestText}>Request a Cleaning</Text>
-            <View style={styles.requestButtonBox}>
-              <TouchableHighlight
-               style={styles.button2}
-               onPress={() => this.props.navigation.navigate('Jobs')}
-              >
-            </View>
-          </View>
-         
-          */}
-
-        
       </View>
     );
   }
