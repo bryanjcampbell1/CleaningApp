@@ -106,11 +106,11 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   calendarBox: {
-    flex: 0.5,
+    flex: 0.6,
     alignSelf: "stretch"
   },
   timePickerBox: {
-    flex: 0.35,
+    flex: 0.25,
     textAlign: 'center',
   },
   nextButtonBox: {
@@ -162,7 +162,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: "rgba(134,219,234,1)",
     borderWidth: 5,
-    margin: 30
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 30,
+    marginRight:30
   },
   button3Text: {
     backgroundColor: "transparent",

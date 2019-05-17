@@ -56,6 +56,7 @@ handleClick = () => {
   render() {
     return (
       <View style={styles.container}>
+
         <View style={styles.PlacesContainer}>
               <GooglePlacesAutocomplete
                 placeholder='Search'
@@ -112,6 +113,7 @@ handleClick = () => {
                 
               />
         </View>
+
         <View style={styles.MapContainer}>
           <MapView
           style={{ alignSelf: 'stretch', height: 600}}
@@ -125,9 +127,11 @@ handleClick = () => {
             />
           </MapView>
         </View>
+
         <View style={styles.ChosenLocationBox}>
           <Text style={styles.ChosenLocationText}>{this.state.nameOfLocation}</Text>
         </View>
+
         <View style={styles.nextButtonBox} >
           <TouchableHighlight
            style={styles.button3}
@@ -191,13 +195,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   PlacesContainer: {
-    flex: .2,
+    flex: .25,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 10,
   },
   MapContainer: {
-    flex: .6,
+    flex: .55,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -205,7 +208,7 @@ const styles = StyleSheet.create({
     flex: 0.15,
   },
   ChosenLocationBox: {
-    flex: 0.1,
+    flex: 0.05,
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: "ArialRoundedMTBold",
@@ -222,7 +225,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: "rgba(134,219,234,1)",
     borderWidth: 5,
-    margin: 30
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 30,
+    marginRight:30
   },
   button3Text: {
     backgroundColor: "transparent",
