@@ -58,10 +58,10 @@ export default class WhenScreen extends Component {
         <View style={styles.timePickerBox} >
           <ExampleApp />
         </View>
-        <View style={styles.nextButtonBox} >
+        <View style={styles.NextBox}>
           <TouchableHighlight
            style={styles.button3}
-           onPress={() => this.props.navigation.navigate('Where')}
+           onPress={() => this.props.navigation.navigate('Price')}
           >
            <Text style={styles.button3Text}> Next </Text>
           </TouchableHighlight>
@@ -113,8 +113,9 @@ const styles = StyleSheet.create({
     flex: 0.25,
     textAlign: 'center',
   },
-  nextButtonBox: {
+  NextBox: {
     flex: 0.15,
+    backgroundColor: "transparent"
   },
   calendarObject: {
     backgroundColor: "rgba(165,2,2,1)",
@@ -162,8 +163,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: "rgba(134,219,234,1)",
     borderWidth: 5,
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 10,
     marginLeft: 30,
     marginRight:30
   },

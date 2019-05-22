@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   rect: {
-    flex: 0.5,
+    flex: 0.35,
     backgroundColor: "rgb(230,230,230)",
     alignSelf: "stretch",
     alignItems: "center",
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     paddingTop: 0
   },
   rect2: {
-    flex: 0.35,
+    flex: 0.5,
     backgroundColor: "rgba(226,17,17,1)",
     opacity: 1,
     alignSelf: "stretch"
@@ -69,16 +69,16 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   rect4: {
-    width: 224,
-    height: 213,
+    flex: 0.8,
+    alignSelf: "stretch",
     backgroundColor: "rgba(215,0,247,1)",
     opacity: 1,
     margin: 5,
     borderRadius: 100
   },
   rect5: {
-    width: 305,
-    height: 54,
+    flex: 0.2,
+    alignSelf: "stretch",
     backgroundColor: "rgba(234,124,124,1)",
     opacity: 1,
     margin: 5

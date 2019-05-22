@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, TouchableHighlight  } from "react-native";
+import { View, StyleSheet, TouchableHighlight  } from "react-native";
+import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
 
 export default class PriceScreen extends Component {
   static navigationOptions = {
@@ -9,22 +10,77 @@ export default class PriceScreen extends Component {
     return (
       <View style={styles.root}>
         <View style={styles.rect}>
-          <View style={styles.rect4} />
           <Text style={styles.text}>Job: 2 Hr Laundry</Text>
+          <View style={styles.rect4} />
         </View>
         <View style={styles.rect2}>
           <Text style={styles.text2}>Providers</Text>
-          <View style={styles.rect5} />
-        </View>
-        <View style={styles.rect3} >
-          <TouchableHighlight
-           style={styles.button3}
-           onPress={() => this.props.navigation.navigate('Provider')}
-          >
-            <Text style={styles.button3Text}> Next </Text>
-          </TouchableHighlight>
+          <View style={styles.rect5}>
+            <ListAvatarExample/>
+          </View>
         </View>  
       </View>
+    );
+  }
+}
+
+class ListAvatarExample extends Component {
+  render() {
+    return (
+      <Container>
+        <Content>
+          <List>
+            <ListItem avatar>
+              <Left>
+                <Thumbnail source={{ uri: 'https://www.rollingstone.com/wp-content/uploads/2018/12/shutterstock_10012822bl.jpg?crop=900:600&width=440' }} />
+              </Left>
+              <Body>
+                <Text>Kumar Pratik</Text>
+                <Text note>Doing what you like will always keep you happy . .</Text>
+              </Body>
+              <Right>
+                <Text note>3:43 pm</Text>
+              </Right>
+            </ListItem>
+            <ListItem avatar>
+              <Left>
+                <Thumbnail source={{ uri: 'https://www.rollingstone.com/wp-content/uploads/2018/12/shutterstock_10012822bl.jpg?crop=900:600&width=440' }} />
+              </Left>
+              <Body>
+                <Text>Kumar Pratik</Text>
+                <Text note>Doing what you like will always keep you happy . .</Text>
+              </Body>
+              <Right>
+                <Text note>3:43 pm</Text>
+              </Right>
+            </ListItem>
+            <ListItem avatar>
+              <Left>
+                <Thumbnail source={{ uri: 'https://www.rollingstone.com/wp-content/uploads/2018/12/shutterstock_10012822bl.jpg?crop=900:600&width=440' }} />
+              </Left>
+              <Body>
+                <Text>Kumar Pratik</Text>
+                <Text note>Doing what you like will always keep you happy . .</Text>
+              </Body>
+              <Right>
+                <Text note>3:43 pm</Text>
+              </Right>
+            </ListItem>
+            <ListItem avatar>
+              <Left>
+                <Thumbnail source={{ uri: 'https://www.rollingstone.com/wp-content/uploads/2018/12/shutterstock_10012822bl.jpg?crop=900:600&width=440' }} />
+              </Left>
+              <Body>
+                <Text>Kumar Pratik</Text>
+                <Text note>Doing what you like will always keep you happy . .</Text>
+              </Body>
+              <Right>
+                <Text note>3:43 pm</Text>
+              </Right>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
     );
   }
 }
@@ -34,7 +90,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   rect: {
-    flex: 0.35,
+    flex: 0.25,
     backgroundColor: "rgba(106,17,187,1)",
     opacity: 1,
     alignSelf: "stretch",
@@ -44,25 +100,21 @@ const styles = StyleSheet.create({
   rect2: {
     backgroundColor: "rgba(126,211,33,1)",
     opacity: 1,
-    flex: 0.5,
+    flex: 0.75,
     alignSelf: "stretch",
     justifyContent: "space-between",
     borderColor: "rgba(0,0,0,0)",
-    borderWidth: 15
-  },
-  rect3: {
-    flex: 0.15,
-    alignSelf: "stretch"
+    borderWidth: 12
   },
   rect4: {
     backgroundColor: "rgb(230,230,230)",
     alignSelf: "stretch",
-    flex: .8,
+    flex: .75,
     borderRadius: 25,
-    margin: 43
+    margin: 15
   },
   text: {
-    flex: .2,
+    flex: .25,
     fontSize: 20,
     fontFamily: "ArialRoundedMTBold",
     textAlign: "center",
@@ -85,23 +137,7 @@ const styles = StyleSheet.create({
     fontFamily: "ArialRoundedMTBold",
     textAlign: "center",
     backgroundColor: "transparent",
-
     alignSelf: "stretch"
   },
-  button3: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: "rgb(230,230,230)",
-    borderRadius: 20,
-    borderColor: "rgba(134,219,234,1)",
-    borderWidth: 5,
-    margin: 30
-  },
-  button3Text: {
-    backgroundColor: "transparent",
-    fontSize: 25,
-    fontFamily: "ArialRoundedMTBold",
-    textAlign: "center"
-  },
+
 });
